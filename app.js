@@ -19,6 +19,7 @@ function login() {
     }
 }
 
+const form = document.getElementById("form");
 
 if (form) {
     form.addEventListener("submit", (e) => {
@@ -27,11 +28,12 @@ if (form) {
         const password = document.getElementById('password').value;
 
         if (name == 'usuario' && password == '1234') {
-            const user = document.getElementById('exitoso').innerHTML = `Bienvenido ${name}`
+            document.getElementById('exitoso').innerHTML = `Bienvenido ${name}`
             document.getElementById('error').innerHTML = ''
             return;
         }  else {
             document.getElementById('error').innerHTML = 'Incorrecto <br/>'
+            document.getElementById('exitoso').innerHTML = ``
         }
 
         if (name.length < 3 ) {
